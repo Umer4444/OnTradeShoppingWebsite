@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    font-size: 35px;
+    color: white;
+    font-weight: 600;
+    line-height: 80px;
+
+}
+
+
+.header__back {
+    padding: 6px 0;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    height: 80px;
+    display: flex !important;
+    justify-content: space-between;
+}
+
+.links,
+.links__2 {
+    float: right;
+}
+
+.links li,
+.links__2 li {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 15px;
+    line-height: 80px;
+    font-weight: 500;
+}
+
+.links__2 li {
+    margin-right: 0;
+}
+
+.links li a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    position: relative;
+    /* Add position relative for the pseudo-element */
+}
+
+.links li a::before {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 100%;
+    background-color: #da3c3c;
+    /* Change to your underline color */
+    height: 2px;
+    /* Adjust thickness if needed */
+    transition: right 0.3s ease;
+    /* Transition for the underline */
+}
+
+.links li a:hover::before {
+    right: 0;
+}
+
+.checkbtn {
+    float: right;
+    font-size: 20px;
+    color: black;
+    line-height: 80px;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+.links__2 a,
+.links__3 a {
+    padding: 10px;
+    font-weight: 700;
+    color: black !important;
+    text-decoration: none;
+}
+
+.links li .active {
+    color: gray;
+}
+
+.links__2 a img,
+.links__3 a img {
+    height: 4vh;
+}
+
+.links__3 {
+    display: none;
+}
+.homeproducts a{
+    text-decoration: none;
+}
+.homeproducts a h5{
+    color: black;
+}
+.homeproducts a .homeproducts__pfirst{
+    margin: 7px 0 0 0;
+    color: gray;
+}
+.homeproducts a .homeproducts__psecond{
+    margin: 7px 0 0 0;
+    font-weight: 700;
+}
+.wishlist{
+    background: #FFF;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    width: 20%;
+    text-align: center;
+    position: absolute;
+    top: 2%;
+    right: -100%;
+    transition: 0.5s ease;
+    padding: 14px;
+}
+.wishlist i{
+    font-size: 24px;
+}
+.pos__r{
+    position: relative;
+    overflow: hidden;
+}
+.pos__r img{
+    width: 100%;
+}
+.pos__r:hover .wishlist{
+    right: 2%;
+}
+.links__2 i{
+    font-size: 20px;
+}
+.list-group li p, .list-group li h4{
+    padding: 8px 18px;
+    line-height: 20px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+.bgg__r{
+    color: white !important;
+    background-color: #da3c3c !important;
+}
+.carousel-inner h5{
+    color:  #da3c3c;
+}
+.carousel-inner h1{
+    color: white;
+    font-weight: 700;
+}
+.carousel-inner p{
+    color: white;
+    font-weight: 600;
+}
+.carousel-inner a{
+    color: white;
+    background-color: #da3c3c;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Adjust the alpha (0.5) to change darkness */
+    z-index: 1;
+}
+
+.carousel-inner .carousel-caption {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: white; /* Text color */
+    /* Add your existing styles */
+}
+.productdetail__data .productdetail__btn{
+color: white;
+background-color: #da3c3c;
+border: 2px solid #da3c3c;
+padding: 10px;
+text-decoration: none;
+font-weight: 600;
+}
+.productdetail__data .productdetail__btn:hover{
+    background-color: #b53232;
+    border: 2px solid #b53232;
+}
+
+
+/* Styles can be adjusted as needed */
+.quantity {
+    display: flex;
+    align-items: center;
+}
+
+.count {
+    width: 50px;
+    text-align: center;
+}
+
+/* Style the buttons */
+.increment,
+.decrement {
+    display: inline-block;
+    width: 30px;
+    height: 42px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+/* Remove default number input arrows */
+.count::-webkit-inner-spin-button,
+.count::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* Optional - to ensure no gap */
+}
+
+.count {
+    width: 50px;
+    text-align: center;
+    height: 42px;
+    border: 1px solid #ccc;
+    /* Other styles as needed */
+}
+
+
+.share__icons{
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+
+/*
+ CSS for the main interaction of TABS in product_detail.html
+*/
+.tabset > input[type="radio"] {
+    position: absolute;
+    left: -200vw;
+  }
+  
+  .tabset .tab-panel {
+    display: none;
+  }
+  
+  .tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+  .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+  .tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+  .tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+  .tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+  .tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+    display: block;
+  }
+  
+  /*
+   Styling
+  */
+  
+  .tabset > label {
+    position: relative;
+    display: inline-block;
+    padding: 15px 15px 25px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .tabset > label::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    width: 22px;
+    height: 4px;
+    background: #8d8d8d;
+  }
+  
+  .tabset input:focus-visible + label {
+    outline: 2px solid rgba(0, 102, 204, 1);
+    border-radius: 3px;
+  }
+  
+  .tabset > label:hover,
+  .tabset > input:focus + label,
+  .tabset > input:checked + label {
+    color: #06c;
+  }
+  
+  .tabset > label:hover::after,
+  .tabset > input:focus + label::after,
+  .tabset > input:checked + label::after {
+    background: #06c;
+  }
+  
+  .tabset > input:checked + label {
+    border-color: #ccc;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+  }
+  
+  .tab-panel {
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+  }
+  
+  /*
+   Demo purposes only
+  */
+  
+  
+  
+  
+  .tabset {
+    max-width: 65em;
+  }
+  
+
+
+@media screen and (max-width:770px){
+    .links{
+        position: absolute;
+        background: navy;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: all 0.5s;
+    }
+    .links li{
+        display: block;
+    }
+    .checkbtn{
+        display: block;
+    }
+    #check:checked ~ .links{
+        left: 0;
+    }
+}
