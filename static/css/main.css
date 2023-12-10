@@ -100,23 +100,28 @@ nav {
 .links__3 {
     display: none;
 }
-.homeproducts a{
+
+.homeproducts a {
     text-decoration: none;
 }
-.homeproducts a h5{
+
+.homeproducts a h5 {
     color: black;
 }
-.homeproducts a .homeproducts__pfirst{
+
+.homeproducts a .homeproducts__pfirst {
     margin: 7px 0 0 0;
     color: gray;
 }
-.homeproducts a .homeproducts__psecond{
+
+.homeproducts a .homeproducts__psecond {
     margin: 7px 0 0 0;
     font-weight: 700;
 }
-.wishlist{
+
+.wishlist {
     background: #FFF;
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
     width: 20%;
     text-align: center;
     position: absolute;
@@ -125,44 +130,60 @@ nav {
     transition: 0.5s ease;
     padding: 14px;
 }
-.wishlist i{
+
+.wishlist i {
     font-size: 24px;
 }
-.pos__r{
+
+.pos__r {
     position: relative;
     overflow: hidden;
 }
-.pos__r img{
+
+.pos__r img {
     width: 100%;
 }
-.pos__r:hover .wishlist{
+
+.pos__r:hover .wishlist {
     right: 2%;
 }
-.links__2 i{
+
+.links__2 i {
     font-size: 20px;
 }
-.list-group li p, .list-group li h4{
+
+.list-group a {
+    text-decoration: none;
+}
+
+.list-group li p,
+.list-group li h4 {
     padding: 8px 18px;
     line-height: 20px;
     font-weight: 700;
     margin-bottom: 0;
 }
-.bgg__r{
+
+.bgg__r {
     color: white !important;
     background-color: #da3c3c !important;
 }
-.carousel-inner h5{
-    color:  #da3c3c;
+
+.carousel-inner h5 {
+    color: #da3c3c;
 }
-.carousel-inner h1{
+
+.carousel-inner h1 {
     color: white;
     font-weight: 700;
 }
-.carousel-inner p{
+
+.carousel-inner p {
     color: white;
     font-weight: 600;
 }
-.carousel-inner a{
+
+.carousel-inner a {
     color: white;
     background-color: #da3c3c;
     padding: 10px;
@@ -178,7 +199,8 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Adjust the alpha (0.5) to change darkness */
+    background: rgba(0, 0, 0, 0.6);
+    /* Adjust the alpha (0.5) to change darkness */
     z-index: 1;
 }
 
@@ -187,18 +209,21 @@ nav {
     bottom: 0;
     transform: translateY(-50%);
     z-index: 2;
-    color: white; /* Text color */
+    color: white;
+    /* Text color */
     /* Add your existing styles */
 }
-.productdetail__data .productdetail__btn{
-color: white;
-background-color: #da3c3c;
-border: 2px solid #da3c3c;
-padding: 10px;
-text-decoration: none;
-font-weight: 600;
+
+.productdetail__data .productdetail__btn {
+    color: white;
+    background-color: #da3c3c;
+    border: 2px solid #da3c3c;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: 600;
 }
-.productdetail__data .productdetail__btn:hover{
+
+.productdetail__data .productdetail__btn:hover {
     background-color: #b53232;
     border: 2px solid #b53232;
 }
@@ -227,11 +252,13 @@ font-weight: 600;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
+
 /* Remove default number input arrows */
 .count::-webkit-inner-spin-button,
 .count::-webkit-outer-spin-button {
     -webkit-appearance: none;
-    margin: 0; /* Optional - to ensure no gap */
+    margin: 0;
+    /* Optional - to ensure no gap */
 }
 
 .count {
@@ -243,7 +270,7 @@ font-weight: 600;
 }
 
 
-.share__icons{
+.share__icons {
     display: flex;
     align-items: baseline;
     gap: 15px;
@@ -253,29 +280,29 @@ font-weight: 600;
 /*
  CSS for the main interaction of TABS in product_detail.html
 */
-.tabset > input[type="radio"] {
+.tabset>input[type="radio"] {
     position: absolute;
     left: -200vw;
-  }
-  
-  .tabset .tab-panel {
+}
+
+.tabset .tab-panel {
     display: none;
-  }
-  
-  .tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
-  .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
-  .tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
-  .tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
-  .tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
-  .tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+}
+
+.tabset>input:first-child:checked~.tab-panels>.tab-panel:first-child,
+.tabset>input:nth-child(3):checked~.tab-panels>.tab-panel:nth-child(2),
+.tabset>input:nth-child(5):checked~.tab-panels>.tab-panel:nth-child(3),
+.tabset>input:nth-child(7):checked~.tab-panels>.tab-panel:nth-child(4),
+.tabset>input:nth-child(9):checked~.tab-panels>.tab-panel:nth-child(5),
+.tabset>input:nth-child(11):checked~.tab-panels>.tab-panel:nth-child(6) {
     display: block;
-  }
-  
-  /*
+}
+
+/*
    Styling
   */
-  
-  .tabset > label {
+
+.tabset>label {
     position: relative;
     display: inline-block;
     padding: 15px 15px 25px;
@@ -283,9 +310,9 @@ font-weight: 600;
     border-bottom: 0;
     cursor: pointer;
     font-weight: 600;
-  }
-  
-  .tabset > label::after {
+}
+
+.tabset>label::after {
     content: "";
     position: absolute;
     left: 15px;
@@ -293,51 +320,151 @@ font-weight: 600;
     width: 22px;
     height: 4px;
     background: #8d8d8d;
-  }
-  
-  .tabset input:focus-visible + label {
+}
+
+.tabset input:focus-visible+label {
     outline: 2px solid rgba(0, 102, 204, 1);
     border-radius: 3px;
-  }
-  
-  .tabset > label:hover,
-  .tabset > input:focus + label,
-  .tabset > input:checked + label {
+}
+
+.tabset>label:hover,
+.tabset>input:focus+label,
+.tabset>input:checked+label {
     color: #06c;
-  }
-  
-  .tabset > label:hover::after,
-  .tabset > input:focus + label::after,
-  .tabset > input:checked + label::after {
+}
+
+.tabset>label:hover::after,
+.tabset>input:focus+label::after,
+.tabset>input:checked+label::after {
     background: #06c;
-  }
-  
-  .tabset > input:checked + label {
+}
+
+.tabset>input:checked+label {
     border-color: #ccc;
     border-bottom: 1px solid #fff;
     margin-bottom: -1px;
-  }
-  
-  .tab-panel {
+}
+
+.tab-panel {
     padding: 30px 0;
     border-top: 1px solid #ccc;
-  }
-  
-  /*
+}
+
+/*
    Demo purposes only
   */
-  
-  
-  
-  
-  .tabset {
+
+
+
+
+.tabset {
     max-width: 65em;
+}
+
+
+
+/* Basic styles for the slider */
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+}
+
+.slide {
+    flex: 0 0 33.33%;
+    /* Three columns in normal view */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Styles for slider buttons */
+.prev,
+.next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(255 4 4 / 50%);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Add styles for bullets */
+.bullets-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #999;
+    margin: 0 5px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Additional styles for active bullet */
+.bullet.active {
+    background-color: #333;
+}
+
+.slidedata{
+    position: relative;
+}
+.slidedata .slidedata__cont{
+    position: absolute;
+    top: 30%;
+    width: 50%;
+    text-align: right;
+}
+
+.slidedata img {
+    width: 100%;
+}
+.slidedata__cont h6{
+    color: red;
+}
+.slidedata__cont h3{
+    font-weight: 700;
+}
+.slidedata__cont a{
+    text-decoration: none;
+    color: black;
+}
+.underline-red {
+    position: relative;
+    text-decoration: none;
+    color: #000; /* Set your preferred text color */
+  
+  }
+  
+  .underline-red::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: red; /* Change this to your desired underline color */
   }
   
 
 
-@media screen and (max-width:770px){
-    .links{
+
+
+@media screen and (max-width:770px) {
+    .links {
         position: absolute;
         background: navy;
         top: 80px;
@@ -347,13 +474,37 @@ font-weight: 600;
         text-align: center;
         transition: all 0.5s;
     }
-    .links li{
+
+    .links li {
         display: block;
     }
-    .checkbtn{
+
+    .checkbtn {
         display: block;
     }
-    #check:checked ~ .links{
+
+    #check:checked~.links {
         left: 0;
+    }
+
+    .slide {
+        flex: 0 0 100%;
+        /* Full width for each slide in slider mode */
+    }
+
+    .prev,
+    .next {
+        display: block;
+    }
+
+    .prev {
+        left: 24px;
+    }
+
+    .next {
+        right: 24px;
+    }
+    .bullet {
+        display: block;
     }
 }
