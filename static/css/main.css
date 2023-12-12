@@ -533,6 +533,7 @@ nav {
     font-size: 30px;
 }
 
+
 @media screen and (max-width:770px) {
     .links {
         position: absolute;

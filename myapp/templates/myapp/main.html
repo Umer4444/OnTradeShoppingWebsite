@@ -40,6 +40,34 @@
 })
     </script>
 
+<script>
+    
+  $(document).ready(function() {
+  $('.image-container').hover(function() {
+      const $this = $(this);
+      const $secondaryImage = $this.find('.secondary-image');
 
+      $secondaryImage.fadeIn('fast');
+
+      $this.on('mousemove', function(e) {
+          const xOffset = (e.pageX - $this.offset().left);
+          const yOffset = (e.pageY - $this.offset().top);
+          const xPercentage = (xOffset / $this.width()) * 100;
+          const yPercentage = (yOffset / $this.height()) * 100;
+
+          $secondaryImage.css({
+              'transform-origin': `${xPercentage}% ${yPercentage}%`,
+              transform: 'scale(1.5)', // Adjust the zoom level as needed
+          });
+      });
+  }, function() {
+      const $secondaryImage = $(this).find('.secondary-image');
+      $secondaryImage.fadeOut('fast');
+      $secondaryImage.css('transform', 'scale(1)'); // Reset zoom on mouse leave
+  });
+});
+
+
+</script>
   </body>
 </html>
