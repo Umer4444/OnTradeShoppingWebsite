@@ -33,11 +33,39 @@
                         <a href=""><i class="fa-regular fa-heart"></i></a>
                     </li>
                     <li>
-                        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="{% url 'cart_view' %}">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Cart (<span id="totalProductsInCart">0</span>)
+                        </a>
                     </li>
-                    <li><p>Total</p></li>
+                    <li>
+                        <p>Total: $<span id="totalPrice">0.00</span></p>
+                    </li>                    
                 </ul>
             </nav>
         </div>
     </div>
 </header>
+
+<!-- Add jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+function updateCartDetails() {
+    $.ajax({
+        url: '/get_cart_details/',  // Endpoint to get cart details
+        method: 'GET',
+        success: function(data) {
+            // Update the DOM with retrieved data
+            $('#totalProductsInCart').text(data.total_products);
+            $('#totalPrice').text(data.total_price);
+        }
+    });
+}
+
+// Call the function initially and then set an interval to update the cart details every few seconds
+$(document).ready(function() {
+    updateCartDetails();
+    setInterval(updateCartDetails, 5000); // Update every 5 seconds (adjust this interval as needed)
+});
+</script>

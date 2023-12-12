@@ -458,10 +458,38 @@ nav {
     height: 2px;
     background-color: red; /* Change this to your desired underline color */
   }
-  
+  .bestsellers__cont h6{
+    color: #da3c3c;
+  }
+  .bestsellers__cont h1{
+    font-weight: 700;
+    font-size: 40px;
+  }
 
-
-
+  .carousel-dark .carousel-control-next-icon, .carousel-dark .carousel-control-prev-icon {
+    filter: none !important;
+}
+.carousel-dark .carousel-indicators [data-bs-target]{
+    background-color: white !important;
+}
+.customerreviews img{
+    height: 50vh;
+    object-fit: cover;
+}
+.carousel-inner .carousel-caption{
+    transform: translateY(-100%);
+}
+.customerreviews{
+    position: relative;
+}
+.customerreviews__data{
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    position: absolute;
+    color: white;
+}
 
 @media screen and (max-width:770px) {
     .links {

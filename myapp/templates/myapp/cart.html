@@ -1,0 +1,24 @@
+{% extends "myapp/main.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <!-- Display cart items -->
+{% for product in products_in_cart %}
+<div>
+        {% if product.productimage_set.exists %}
+        {% with product.productimage_set.first.image.url as first_image %}
+        <img src="{{ first_image }}" class="card-img-top" alt="{{ product.title }}">
+        {% endwith %}
+        {% endif %}
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text homeproducts__pfirst">Category: {{ product.get_category_display }}</p>
+        <p class="card-text homeproducts__psecond text-danger">Price: ${{ product.price }}</p>
+        
+</div>
+{% endfor %}
+
+</div>
+
+{% endblock  %}

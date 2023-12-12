@@ -36,7 +36,7 @@
                             <button class="decrement">-</button>
                             <input type="number" class="count" value="1">
                             <button class="increment">+</button>
-                            <button class="productdetail__btn ms-4">ADD TO CART</button>
+                            <button class="productdetail__btn ms-4 add-to-cart" data-product-id="{{ product.id }}">ADD TO CART</button>
                         </div>
                         <div class="mb-3">
                             <i class="fa-regular fa-heart"></i>
@@ -113,6 +113,38 @@
     </div>
 
 </div>
+<section>
+    <div class="bestsellers container mt-5">
+        <div class="bestsellers__cont text-center">
+            <h1>
+                Related Products
+            </h1>
+        </div>
+        <div class="owl-carousel owl-theme homeproducts mt-5">
+            {% for category_product in category_products %}
+            <div class="item">
+                <a href="{% url 'product_detail' category_product.id %}">
+                    <div class="pos__r">
+                        {% if category_product.productimage_set.exists %}
+                        {% with category_product.productimage_set.first.image.url as first_image %}
+                        <img src="{{ first_image }}" class="card-img-top" alt="{{ category_product.title }}">
+                        {% endwith %}
+                        {% endif %}
+                        <h5 class="card-title">{{ category_product.title }}</h5>
+                        <p class="card-text homeproducts__pfirst">Category: {{ category_product.get_category_display }}
+                        </p>
+                        <p class="card-text homeproducts__psecond text-danger">Price: ${{ category_product.price }}</p>
+                        <div class="wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -135,6 +167,34 @@
         });
     });
 
+</script>
+
+
+<script>
+    // Get all the buttons with the "add-to-cart" class
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+    // Add click event listeners to each button
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            const productId = event.target.dataset.productId;
+
+            // Perform an AJAX request to add the product to the cart
+            fetch(`/add-to-cart/${productId}/`) // Replace with your add-to-cart URL
+                .then(response => {
+                    if (response.ok) {
+                        // Cart updated successfully, you might update UI elements here
+                        console.log('Product added to cart!');
+                    } else {
+                        // Handle error, show an alert or message
+                        console.error('Failed to add product to cart');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    });
 </script>
 
 {% endblock %}
