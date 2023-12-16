@@ -214,7 +214,7 @@ nav {
     /* Add your existing styles */
 }
 
-.productdetail__data .productdetail__btn, .cart__btn {
+.productdetail__btn, .cart__btn {
     color: white;
     background-color: #da3c3c;
     border: 2px solid #da3c3c;
@@ -532,21 +532,118 @@ nav {
     color: #da3c3c;
     font-size: 30px;
 }
-
-
-@media screen and (max-width:770px) {
+.ondortrades__flex{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+.ondortrades{
+    background-color: #f9f9f9;
+}
+.ondortrades__col{
+    width: 33%;
+    padding: 20px;
+}
+.red-c{
+    color: #da3c3c;
+}
+.ondortrades__col h5{
+    font-weight: 700;
+}
+.ondortrades__col h1, .aboutstore h1{
+    font-size: 40px;
+    line-height: 55px;
+    font-weight: 700;
+}
+.ondortrades__col p{
+    color: gray;
+    font-size: 20px;
+    line-height: 35px;
+    margin-bottom: 0;
+}
+.aboutstore img, .ourteam img{
+    width: 100%;
+}
+.marl__m{
+    margin-left: 10%;
+}
+.aboutstore h5, .aboutstore p{
+    color: gray;
+    line-height: 30px;
+    font-size: 18px;
+}
+.pagination{
+    float: right;
+}
+.pagination span .current{
+    background: red;
+    color: white;
+    padding: 5px 10px;
+}
+.pagination a{
+    text-decoration: none;
+    color: black;
+}
+footer{
+    background-color: rgb(12,12,12);
+    padding: 50px 0px;
+}
+.footback h5{
+    color: white;
+}
+.footback ul{
+    list-style: none;
+    padding-left: 0;
+}
+.footback ul li, .footback ul li a{
+    color: #cecece;
+    margin-top: 20px;
+    text-decoration: none;
+}
+.hr__br{
+    border: 1px solid white !important;
+}
+.footback p{
+    color: #cecece;
+    margin-top: 20px;
+    margin: 25px 0 0 0;
+}
+.contactus__form{
+    margin-left: 25px;
+}
+.contactus__form input{
+    height: 40px;
+    width: 100%;
+    border: 1px solid #bdbdbd;
+}
+.contactus__form p, .contactus__form label{
+    margin: 15px 0 5px 0;
+}
+.contactus__form textarea{
+    width: 100%;
+    border: 1px solid #bdbdbd;
+}
+.contactus h5{
+    color: #cecece;
+}
+.contactus h3{
+    font-weight: 700;
+    margin-top: 10px;
+}
+@media screen and (min-width: 993px) and (max-width: 1200px) {
     .links {
         position: absolute;
-        background: navy;
+        background: #fafafa;
         top: 80px;
         left: -100%;
         width: 100%;
         height: 100vh;
         text-align: center;
         transition: all 0.5s;
+        z-index: 9999;
     }
 
-    .links li {
+    .links li, .links__3 {
         display: block;
     }
 
@@ -557,7 +654,92 @@ nav {
     #check:checked~.links {
         left: 0;
     }
+    .links__2{
+        display: none;
+    }
+    .links, .links__3{
+        padding-left: 0;
+    }
+}
+@media screen and (min-width: 771px) and (max-width: 992px) {
+    .links {
+        position: absolute;
+        background: #fafafa;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: all 0.5s;
+        z-index: 9999;
+    }
 
+    .links li, .links__3 {
+        display: block;
+    }
+
+    .checkbtn {
+        display: block;
+    }
+
+    #check:checked~.links {
+        left: 0;
+    }
+    .links__2{
+        display: none;
+    }
+    .links, .links__3{
+        padding-left: 0;
+    }
+    /* for about page */
+    .ondortrades__flex{
+        display: block;
+    }
+    .marl__m{
+        margin-left: 0;
+    }
+    .ondortrades__col {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* contactus page */
+    .contactus__form {
+        margin-top: 15px;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width:770px) {
+    .links {
+        position: absolute;
+        background: #fafafa;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: all 0.5s;
+        z-index: 9999;
+    }
+
+    .links li, .links__3 {
+        display: block;
+    }
+    .links, .links__3{
+        padding-left: 0;
+    }
+
+    .checkbtn {
+        display: block;
+    }
+
+    #check:checked~.links {
+        left: 0;
+    }
+    .links__2{
+        display: none;
+    }
     .slide {
         flex: 0 0 100%;
         /* Full width for each slide in slider mode */
@@ -577,5 +759,31 @@ nav {
     }
     .bullet {
         display: block;
+    }
+    .carousel-inner .carousel-caption{
+        transform: none;
+    }
+    .carousel-caption h1, .customerreviews__data h1{
+        font-size: 1.5em;
+    }
+    .carousel-caption h5{
+        font-size: 1rem;
+    }
+
+    /* for about page */
+    .ondortrades__flex{
+        display: block;
+    }
+    .marl__m{
+        margin-left: 0;
+    }
+    .ondortrades__col {
+        width: 100%;
+        padding: 10px;
+    }
+    /* contactus page */
+    .contactus__form {
+        margin-top: 15px;
+        margin-left: 0;
     }
 }

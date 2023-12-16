@@ -22,4 +22,23 @@ class CartAdmin(admin.ModelAdmin):
         # Continue with the deletion of the cart
         super().delete_model(request, obj)
 
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ('id', 'user', 'order_date', 'status', 'total_price')
+    list_filter = ('status', 'order_date')
+    search_fields = ('user__username', 'id')  # Search by user's username or order ID
+
+@admin.register(BillingDetails)
+class BillingDetailsAdmin(admin.ModelAdmin):
+    list_display = ('user', 'first_name', 'last_name', 'total_price', 'company_name',
+    'country',
+    'street_address',
+    'town_city',
+    'zip_code',
+    'phone',
+    'email',
+    'order_notes'
+    )  # Customize fields to display in the list
+    # Add other configurations as needed
+
 

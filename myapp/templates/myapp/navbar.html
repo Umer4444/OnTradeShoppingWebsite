@@ -9,16 +9,24 @@
                 </label>
                 <img src="{% static 'images/Ondor_Trades-removebg-preview-2.png' %}" alt="logo">
                 <ul class="links">
-                    <li><a class="active" href="">HOME</a></li>
-                    <li><a href="">ABOUT US</a></li>
-                    <li><a href="">SHOP</a></li>
-                    <li><a href="">CONTACT US</a></li>
+                    <li><a id="homeLink" href="{% url 'home' %}">HOME</a></li>
+                    <li><a id="aboutLink" href="{% url 'aboutus' %}">ABOUT US</a></li>
+                    <li><a id="shopLink" href="{% url 'shop' %}">SHOP</a></li>
+                    <li><a id="contactLink" href="{% url 'contactus' %}">CONTACT US</a></li>
+
                     <ul class="links__3">
                         <!-- <li>
                         <a href=""><img src="images/Symbol.svg" alt=""></a>
                     </li> -->
                         <li>
-                            <a href="">DONATE</a>
+                            <a href="">LOGIN / REGISTER</a>
+                        </li>
+                        <li>
+                            <a href="">Wishlist 
+                                <span>
+                                    <i class="fa-regular fa-heart"></i>
+                                </span>
+                            </a>
                         </li>
                     </ul>
                 </ul>
@@ -40,7 +48,7 @@
                     </li>
                     <li>
                         <p>Total: $<span id="totalPrice">0.00</span></p>
-                    </li>                    
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -51,21 +59,35 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
-function updateCartDetails() {
-    $.ajax({
-        url: '/get_cart_details/',  // Endpoint to get cart details
-        method: 'GET',
-        success: function(data) {
-            // Update the DOM with retrieved data
-            $('#totalProductsInCart').text(data.total_products);
-            $('#totalPrice').text(data.total_price);
-        }
-    });
-}
+    function updateCartDetails() {
+        $.ajax({
+            url: '/get_cart_details/',  // Endpoint to get cart details
+            method: 'GET',
+            success: function (data) {
+                // Update the DOM with retrieved data
+                $('#totalProductsInCart').text(data.total_products);
+                $('#totalPrice').text(data.total_price);
+            }
+        });
+    }
 
-// Call the function initially and then set an interval to update the cart details every few seconds
-$(document).ready(function() {
-    updateCartDetails();
-    setInterval(updateCartDetails, 5000); // Update every 5 seconds (adjust this interval as needed)
-});
+    // Call the function initially and then set an interval to update the cart details every few seconds
+    $(document).ready(function () {
+        updateCartDetails();
+        setInterval(updateCartDetails, 5000); // Update every 5 seconds (adjust this interval as needed)
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        // Get the current URL
+        var currentUrl = window.location.pathname;
+
+        // Check each link's href attribute against the current URL and add the 'active' class accordingly
+        $('ul.links a').each(function () {
+            if ($(this).attr('href') === currentUrl) {
+                $(this).addClass('active');
+            }
+        });
+    });
 </script>

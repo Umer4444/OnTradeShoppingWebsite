@@ -1,0 +1,28 @@
+{% extends "myapp/main.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>Checkout Success</h1>
+    <p>Your order has been placed!</p>
+    
+    <h2>Order Details:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.title }} <span>Quantity</span></td>
+                <td>{{ product.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Total prices of all these products</p>
+
+    
+{% endblock %}
